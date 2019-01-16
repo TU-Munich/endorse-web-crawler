@@ -23,7 +23,7 @@ def safe_html(html):
     # BeautifulSoup is catching out-of-order and unclosed tags, so markup
     # can't leak out of comments and break the rest of the page.
     soup = BeautifulSoup(html, 'lxml')
-    soup.finsAll('a')
+    soup.findAll('a')
 
     # now strip HTML we don't like.
     for tag in soup.findAll():
